@@ -5,14 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cafe con cervezas</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;900&display=swap" rel="stylesheet">
 </head>
 <style>
-div {
-  height: 400px;
-  background-size: cover;
-  
+body{
+    background: coral;
+    margin: 0 auto;
+    max-width: 600px;
 }
 
+div {
+  height: 300px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+  
+}
+h1, h2{
+    color: #782f2f;
+    text-align: center;
+}
+h1{
+    font-family: 'Gloria Hallelujah', cursive ;
+    font-size: 50px;
+      margin: 60px 0 0 0;
+}
+
+h2{
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 400;
+    margin: 0px 0 50px 0;
+    
+}
     .first{
         background-image: url("https://img.taste.com.au/4wB0ZgY6/w720-h480-cfill-q80/taste/2016/11/spicy-stuffed-sausage-cheese-croissants-9733-1.jpeg") ;
     }
@@ -23,32 +54,100 @@ background-image: url("https://images.pexels.com/photos/7390/pexels-photo.jpg?au
      .third{
 background-image: url("https://images.pexels.com/photos/2128024/pexels-photo-2128024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") ;
      }
+
+     .price{
+        float: right;
+        font-family: 'Roboto', sans-serif; 
+        font-size: 20px;
+        font-weight: bold;
+     }
+
+     .menu-title{
+        font-weight: bold;
+         font-family: 'Roboto', sans-serif; 
+     }
     p{
-        color: white;
+        color: rgba(255,255,255,1);
+        background: black;
+        background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+        background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+        background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+        padding: 10px;
+        line-height: 28px;
+        text-align: justify;
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        height: 40px;
+        font-weight: 300;
+        font-family: 'Roboto', sans-serif; 
+         
     }
+
+    small{
+        opacity: 0;
+    }
+    .show-description p {
+        height: 100px;
+        cursor: pointer;
+       
+    }
+
+     .show-description small {
+       opacity: 1;
+    }
+
+    @media(max-width:500px){
+        h1{
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+        }
+        h2{
+   font-size: 20px;
+   margin: 20px 0 30px 0px;
+ }
+ div{
+   margin: 20px 12px 0 12px;
+ }
+ p{
+  font-size: 20px;
+  line-height: 24px;
+ }
+ small{
+   font-size: 16px;
+ }
+    }
+
 </style>
 <body>
     <h1>Café con Cervezas</h1>
     <h2>A Pirque eatery </h2>
-    <div class="first">
-        <p> Croissant with chorizo <span class="price">$5,000</span> <br /> 
+    <div class="first show-description">
+        <p> <span class="menu-title"> Croissant with chorizo</span> <span class="price">$5,000</span> <br /> 
             <small>
             Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil </small>
         </p>
     </div>
-    <div class="second">
-        <p> Croissant with eggs <span class="price">$5,000</span> <br />
+    <div class="second show-description">
+        <p> <span class="menu-title">Croissant Chileno</span> <span class="price">$5,000</span> <br />
             <small>
                 Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring
                 onion summer purslane asparagus lentil </small>
         </p>
     </div>
-    <div class="third">
-        <p> Croissant Australiano <span class="price">$7,000</span> <br />
+    <div class="third show-description">
+        <p> <span class="menu-title">Croissant Australiano</span> <span class="price">$7,000</span> <br />
             <small>
                 Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring
                 onion summer purslane asparagus lentil </small>
         </p>
     </div>
+   <script>
+    $('div').on('click', function () {
+        $(this).toggleClass('show-description');
+    });
+</script>
 </body>
+
 </html>
